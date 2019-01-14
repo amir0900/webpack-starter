@@ -1,11 +1,288 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <title>webpack starterkit</title>
-</head>
-<body>
-  <h1>webpack starter</h1>
-  <p>✨ A lightweight foundation for your next webpack based frontend project.</p>
-</body>
+  <head>
+    <meta charset="UTF-8" />
+    <title>cg payment gateway</title>
+    <meta
+      http-equiv="Cache-Control"
+      content="no-cache, no-store, must-revalidate"
+    />
+    <meta http-equiv="Pragma" content="no-cache" />
+    <meta http-equiv="Expires" content="0" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  </head>
+
+  <body>
+    <!--
+      <p id="message"></p>
+        // post message
+      <script>
+        window.addEventListener("message", function(e) {
+          document.getElementById("message").innerHTML = "message recived";
+          console.log(e.data);
+
+          switch (e.data) {
+            case "clean":
+              document.getElementsByClassName("input-type")[0].value = "";
+              break;
+            case "submit":
+              document.getElementById("cg-form").submit();
+              break;
+            default:
+              break;
+          }
+        });
+      </script>
+    -->
+    <div id="cg-container">
+      <header id="header">
+        <div id="cg-card">
+          <div id="cg-icon-content">
+            <div id="cg-icon">
+              <img src="./assets/credit-card.png" alt="card-in-circle" />
+            </div>
+            <span id="cg-icon-span">secured payment</span>
+          </div>
+        </div>
+      </header>
+      <!-- handle main wrap -->
+      <div id="cg-full-wrapper">
+        <div id="cg-top">
+          <div id="cg-logo-img">
+            <img src="./assets/CG_logo.png" alt="logo" />
+          </div>
+        </div>
+        <!-- show cg & card mock-up -->
+        <div id="cg-payment-wrapper">
+          <div id="loader"><div id="spin"></div></div>
+          <!-- start main form structure -->
+          <div id="cg-form-wrap">
+            <!-- first text instruction for the user -->
+            <div id="cg-form-header">
+              <h3 id="cg-h3"></h3>
+              <p id="cg-instruction-text"></p>
+              <div class="flex">
+                <p id="cg-text-order-number">order number :</p>
+                <p id="cg-order-number">xxxxxxxxxxxxx</p>
+              </div>
+            </div>
+            <!-- payment form -->
+            <form id="cg-form">
+              <div id="credit-card" class="input-control">
+                <label class="label-input"  id="credit-card-label" for="credit-card"></label>
+                <span class="input-wrap">
+                  <i class="fas fa-exclamation"></i>
+                  <i class="fas fa-check"></i>
+                  <input
+                    tabindex="1"
+                    dir="ltr"
+                    name="credit-card"
+                    type="text"
+                    id="credit-card-input"
+                    class="input-type"
+                    aria-required="true"
+                    autocomplete="off"
+                    aria-describedby="cc-msg"
+                  />
+                  <span id="creditErr" class="input-msg">test</span>
+                </span>
+                <span class="input-image"
+                  ><i id="input-icon" class="far fa-credit-card"></i>
+                </span>
+              </div>
+
+              <div id="expire-date" class="input-control">
+                <label class="label-input"  id="expYear-label" for="expYear"></label>
+                <span class="input-wrap">
+                  <div class="custom-select" tabindex="2">
+                    <i class="fas fa-exclamation"></i>
+                    <i class="fas fa-check"></i>
+                    <select
+                      name="expYear"
+                      id="expire-year-input"
+                      aria-required="true"
+                      aria-describedby="date-msg"
+                    >
+                      <!-- adding in the javascript costume file -->
+                    </select>
+                  </div>
+                  <span id="back-tick">/</span>
+                  <div class="custom-select">
+                    <select
+                      name="expMonth"
+                      id="expire-month-input"
+                      aria-required="true"
+                    >
+                      <option value="01">01</option>
+                      <option value="02">02</option>
+                      <option value="03">03</option>
+                      <option value="04">04</option>
+                      <option value="05">05</option>
+                      <option value="06">06</option>
+                      <option value="07">07</option>
+                      <option value="08">08</option>
+                      <option value="09">09</option>
+                      <option value="10">10</option>
+                      <option value="11">11</option>
+                      <option value="12">12</option>
+                    </select>
+                  </div>
+                  <span id="cardExpErr" class="input-msg">test</span>
+                </span>
+                <span class="input-image"
+                  ><i class="far fa-calendar-alt"></i>
+                </span>
+              </div>
+              <div  id="cvv-required" class="input-control">
+                <label class="label-input" 
+                  for="cvv-required-input"
+                  id="cvv-required-label"
+                  >לא נדרש CVV</label
+                >
+                <div class="custom-select">
+                  <select name="cvv-required-input" id="cvv-required-input">
+                      <option></option>
+                    <option value="business-decision">החלטת בית העסק</option>
+                    <option value="unreadable-cvv">לא קריא</option>
+                    <option value="not-exists-cvv">לא קיים</option>
+                  </select>
+                </div>
+                <span class="input-image"
+                  ><i class="fas fa-unlock-alt"></i>
+                </span>
+              </div>
+              <div  id="cvv" class="input-control">
+                <label class="label-input"  id="cvv-label" for="cvv"></label>
+                <span class="input-wrap">
+                  <i class="fas fa-exclamation"></i>
+                  <i class="fas fa-check"></i>
+                  <input
+                    name="cvv"
+                    type="number"
+                    minlength="3"
+                    maxlength="4"
+                    id="cvv-input"
+                    class="input-type"
+                    aria-required="true"
+                    autocomplete="off"
+                    aria-describedby="cvv-msg"
+                  />
+                  <span id="cvvErr" class="input-msg">test</span>
+                </span>
+                <span class="input-image">
+                  <i id="cvv-guide" class="far fa-question-circle"></i>
+                </span>
+                <div id="image-guide-wrap">
+                  <img
+                    src="./assets/cvv-guide.png"
+                    id="cvv-guide-img"
+                    alt="cvv-guide"
+                  />
+                </div>
+              </div>
+
+              <div id="personal-id" class="input-control">
+                <label class="label-input"  id="personal-label" for="personal-id"></label>
+                <span class="input-wrap">
+                  <i class="fas fa-exclamation"></i>
+                  <i class="fas fa-check"></i>
+                  <input
+                    name="personal-id"
+                    type="number"
+                    id="personal-id-input"
+                    class="input-type"
+                    aria-required="true"
+                    autocomplete="off"
+                    aria-describedby="PI-msg"
+                  />
+                  <span id="personalIdErr" class="input-msg">test</span>
+                </span>
+                <span class="input-image"><i class="fas fa-id-card"></i></span>
+              </div>
+
+              <!-- other inputs -->
+              <!--
+                <div class="extra-data input-control">
+                  <label></label>
+                  <input>
+                </div>
+                <div class="extra-data input-control">
+                  <label></label>
+                  <input>
+                </div>
+                <div class="extra-data input-control">
+                  <label></label>
+                  <input>
+                </div>
+                <div class="extra-data input-control">
+                  <label></label>
+                  <input>
+                </div>
+                <div class="extra-data input-control">
+                  <label></label>
+                  <input>
+                </div>
+              -->
+              <span id="payments">
+              <div id="number-of-payments" class="input-control">
+                <label class="label-input"  id="paymentsNumber-label" for="paymentsNumber"></label>
+                <div class="custom-select">
+                  <select name="paymentsNumber" id="paymentsNumber-input">
+                    <!-- adding in the javascript  costume file -->
+                  </select>
+                </div>
+              </div>
+              <div id="firstPayment" class="input-control">
+                <label class="label-input" id="firstPayment-label" for="firstPayment"></label>
+
+                <span name="firstPayment" id="firstPayment-input"></span>
+              </div>
+
+              <div id="restOfPayment" class="input-control">
+                <label class="label-input" id="restOfPayment-label" for="restOfPayment"></label>
+
+                <span type="text" name="restOfPayment" id="restOfPayment-input"
+                  >0.00</span
+                >
+              </div>
+            </span>
+              <!-- payment details -->
+              <div id="payment-details">
+                <div id="charge-text">charge amount</div>
+                <div id="charge-sum">
+                  <!-- <span id="symbol">&#8362;</span> -->
+                  <span id="amount">100</span>
+                </div>
+              </div>
+
+              <!-- btn handlers -->
+              <div id="submit-btns">
+                <button class="form-btns" type="submit" id="submit">
+                  send
+                </button>
+                <a class="form-btns" target="_blank" id="paypal-submit">
+                  <span id="paypal-text">pay with</span>
+                  <img src="./assets/paypal.png" alt="paypal icon" />
+                </a>
+              </div>
+              <div id="tools-btns">
+                <div id="clean">clean</div>
+                <div id="cancel">cancel</div>
+              </div>
+            </form>
+          </div>
+        </div>
+        <div id="secured-payments">
+          <div id="logos">
+            <img src="./assets/pci_logo.png" class="support-payments" />
+            <img src="./assets/amex_logo.png" class="support-payments" />
+            <img src="./assets/mc_logo.png" class="support-payments" />
+            <img src="./assets/visa_logo.png" class="support-payments" />
+          </div>
+          <p id="footer-text">some test</p>
+        </div>
+      </div>
+    </div>
+  </body>
 </html>

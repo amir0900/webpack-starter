@@ -7,12 +7,12 @@ const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const common = require('./webpack.common.js');
 
 module.exports = merge(common, {
-  mode: 'production',
+  mode: 'none',
   devtool: 'source-map',
   stats: 'errors-only',
-  optimization: {
-    minimize: true
-  },
+  // optimization: {
+  //   minimize: true
+  // },
   plugins: [
     new Webpack.DefinePlugin({
       'process.env.NODE_ENV': JSON.stringify('production')
@@ -20,7 +20,7 @@ module.exports = merge(common, {
     // compiling mode “scope hoisting”
     new Webpack.optimize.ModuleConcatenationPlugin(),
     new MiniCssExtractPlugin({
-      filename: 'bundle.css'
+      filename: 'style.css'
     })
   ],
   resolve: {

@@ -4,25 +4,10 @@
   "description": "A light foundation for your next frontend project based on webpack.",
   "scripts": {
     "build": "webpack --config webpack/webpack.config.prod.js  --colors",
-    "dev": "webpack-dev-server --open --config webpack/webpack.config.dev.js"
+    "dev": "webpack-dev-server --open --config webpack/webpack.config.dev.js",
+    "test": "jest"
   },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/wbkd/webpack-starter.git"
-  },
-  "keywords": [
-    "webpack",
-    "startkit",
-    "frontend",
-    "es6",
-    "javascript",
-    "webdev"
-  ],
-  "author": "webkid.io",
   "license": "MIT",
-  "bugs": {
-    "url": "https://github.com/wbkd/webpack-starter/issues"
-  },
   "eslintConfig": {
     "env": {
       "browser": true,
@@ -36,6 +21,11 @@
       "semi": 2
     }
   },
+  "browserslist": [
+    "last 1 version",
+    "> 1%",
+    "IE > 9"
+  ],
   "babel": {
     "presets": [
       "es2015"
@@ -43,6 +33,7 @@
   },
   "homepage": "https://github.com/wbkd/webpack-starter#readme",
   "devDependencies": {
+    "@fortawesome/fontawesome-free": "^5.5.0",
     "babel-core": "^6.26.3",
     "babel-loader": "^7.1.5",
     "babel-preset-es2015": "^6.24.1",
@@ -52,17 +43,22 @@
     "eslint": "^5.4.0",
     "eslint-loader": "^2.1.0",
     "file-loader": "^2.0.0",
+    "html-loader": "^0.5.5",
     "html-webpack-plugin": "^3.2.0",
+    "jest": "^23.6.0",
     "mini-css-extract-plugin": "^0.4.2",
     "node-sass": "^4.9.3",
     "sass-loader": "^7.1.0",
     "style-loader": "^0.22.1",
     "webpack": "^4.17.1",
     "webpack-cli": "^3.1.0",
-    "webpack-dev-server": "^3.1.5",
+    "webpack-dev-server": "^3.1.10",
     "webpack-merge": "^4.1.4"
   },
   "dependencies": {
-    "babel-polyfill": "^6.26.0"
+    "babel-polyfill": "^6.26.0",
+    "jquery": "^3.3.1",
+    "promise-polyfill": "8.1.0",
+    "whatwg-fetch": "^3.0.0"
   }
 }

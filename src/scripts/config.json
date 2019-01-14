@@ -1,0 +1,95 @@
+{
+    "lang":"heb",
+    "styling":{
+    	"body":{"direction":"rtl"},
+    	"cg-h3":{
+    		"color":""
+    	},
+    	"cg-order-number":{
+    		"color":""
+    	}
+    },
+    "extraData":{
+    	"transactionId":123456789,
+    	"charge":"100",
+    	"payments":5,
+    	"reloadTime":600000
+	},
+	"required-inputs":["credit-card-input","cvv-input","personal-id-input","expire-date"],
+	"language": {
+		"heb": {
+		  "title": "דף תשלום מאובטח",
+		  "welcomeMsg": "עמוד זה הינו עמוד התשלום עבור העסקה שביצעת באתר.",
+		  "fillPrivateData": "הזנת פרטי כרטיס אשראי",
+		  "personalDataPlaceHolder": "עמוד זה הינו עמוד התשלום עבור העסקה שבצעת באתר",
+		  "personalId": "ת.ז בעל כרטיס",
+		  "personalIdAreaInput": "תעודת זהות של בעל הכרטיס",
+		  "personalIdErr": "תעודת זהות אינה תקינה",
+		  "creditNum": "מספר כרטיס",
+		  "creditAreaInput": "מספר כרטיס",
+		  "creditErr": "מספר כרטיס או פס מגנטי לא תקין",
+		  "cardExp": "תוקף",
+		  "yearAreaInput": "שנה של תוקף הכרטיס",
+		  "monthAreaInput": "החודש של תוקף הכרטיס",
+		  "cardExpErr": "תוקף לא תקין",
+		  "cvv": "CVV",
+		  "cvvAreaInput": "שלושת הספרות בגב בכרטיס",
+		  "cvvErr": "יש לספק 3 או 4 ספרות בשדה ספרות ביקורת שבגב הכרטיס",
+		  "charge": "סכום לחיוב",
+		  "symbol":"&#8362;",
+		  "numOfPayments": "מספר תשלומים",
+		  "firstPayment":"תשלום ראשון:",
+		  "restOfPayments":"שאר תשלומים:",
+		  "paymentCommission": "עמלת תשלומים",
+		  "currency": "מטבע חיוב",
+		  "email": "דוא''ל הרוכש",
+		  "orderId": "מספר הזמנה: ",
+		  "paypalBtn": "שלם באמצעות",
+		  "payBtn": "תשלום",
+		  "cleanBtn": "נקה שדות",
+		  "cancelBtn": "ביטול עסקה",
+		  "supportPayments": "אנו מכבדים את המותגים הבאים",
+		  "footerText":"
+		  תשלום בעבור ההזמנה יבוצע רק לאחר בחירה בכפתור 'שליחה' שבתחתית המסך.<br><span style='color:red';>*</span>
+		  אנא וודא תחילה כי כל הפרטים בדף זה נכונים והזן את פרטי כרטיס האשראי כנדרש."
+		},
+		"eng": {
+		  "title": "Secured Payment",
+		  "welcomeMsg": "In this page you can pay for the order you placed on the site.",
+		  "personalDataPlaceHolder": "this is the payment page followed by the transaction you made on the website",
+		  "fillPrivateData": "fill credit card information",
+		  "personalId": "Card Owner Identity Number",
+		  "personalIdAreaInput": "security number of the card owner",
+		  "personalIdErr": "Invalid Identity Number",
+		  "creditNum": "Card Number",
+		  "creditAreaInput": "Card Number",
+		  "creditErr": "Invalid Credit Card Number or Track2",
+		  "cardExp": "Card Expiration",
+		  "yearAreaInput": "Card expiration year",
+		  "monthAreaInput": "Card expiration month",
+		  "cardExpErr": "Invalid Card Expiration",
+		  "cvv": "CVV",
+		  "cvvAreaInput": "3 numbers in the back of the card",
+		  "cvvErr": "Invalid CVV",
+		  "charge": "Total Charge",
+		  "symbol": "$",
+		  "numOfPayments": "Number of Payments",
+		  "firstPayment": "first payment:",
+		  "restOfPayments": "rest of payments:",
+		  "paymentCommission": "payment commission",
+		  "currency": "Currency",
+		  "email": "Payer Email",
+		  "orderId": "Order ID: ",
+		  "payBtn": "Pay Now",
+		  "paypalBtn": "Pay with ",
+		  "cleanBtn": "Clean",
+		  "cancelBtn": "Cacnel",
+		  "supportPayments": "We accept the following cards",
+		  "footerText":" The payment process is fully secure and complies with the highest standards of data protection.
+		  Please first confirm the details of the payment amount and the installment details.<br><span style='color:red';>*</span>
+		  Then, please insert your credit card details as required below.
+		  Payment for the order will only be auctioned after you click on the 'Pay' button at the bottom on the screen."
+		}
+	  }
+    
+}
